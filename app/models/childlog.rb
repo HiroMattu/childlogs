@@ -1,0 +1,2 @@
+class Childlog < ApplicationRecord
+end

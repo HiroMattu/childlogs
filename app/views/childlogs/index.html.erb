@@ -1,0 +1,30 @@
+<h1>ことば一覧</h1>
+
+
+<% if @childlogs.any? %>
+  <table class="table table-hover">
+    <thead.thead-default>
+      <tr>
+        <th>No</th>
+        <th>ことば</th>
+        <th>ことばの詳細</th>
+        <th>登録日時</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @childlogs.each do |childlog| %>
+        <tr>
+          <td><%= link_to childlog.id, childlog %></td>
+          <td><%= childlog.word %></td>
+          <td><%= childlog.content %></td>
+          <td><%= childlog.created_at %></td>
+          <td><%= link_to '編集', edit_childlog_path(childlog), class: "btn btn-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% end %>
+
+<%= link_to '新規登録', new_childlog_path, class: "btn btn-primary" %>
