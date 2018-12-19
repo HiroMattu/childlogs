@@ -10,13 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181209121632) do
+ActiveRecord::Schema.define(version: 20181215133935) do
 
   create_table "childlogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "word"
     t.string   "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "user_id"
+    t.date     "childwordtiming"
+    t.integer  "child_id"
+    t.index ["child_id"], name: "index_childlogs_on_child_id", using: :btree
+    t.index ["user_id"], name: "index_childlogs_on_user_id", using: :btree
   end
 
+  create_table "children", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "childname"
+    t.date     "childbirthday"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["user_id"], name: "index_children_on_user_id", using: :btree
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_foreign_key "childlogs", "children"
+  add_foreign_key "childlogs", "users"
+  add_foreign_key "children", "users"
 end

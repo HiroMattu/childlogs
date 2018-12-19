@@ -9,4 +9,6 @@ ja:
   models:
    childlog: こどもろぐ
   attributes:
-   childlog:
+   word: ことば
+   content: ことばの詳細
+   

@@ -1,15 +1,83 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@charset "utf-8";
+
+/* body */
+body {
+  background: #fff;
+}
+footer {
+  margin-top: 40px;
+}
+
+/* navbar */
+.navbar {
+  background-color: #191970;
+}
+
+li {
+	font-size: 12pt;
+	display: inline-block;
+  vertical-align: middle;
+}
+
+.navbar-header img {
+  height: 50px;
+}
+
+/* cover */
+.cover-img {
+	height: 600px;
+	display: table;
+	width: 100%;
+	background-size: cover;
+}
+
+/* ワイドスクリーン用のCSS */
+@media only screen and (min-width: 1500px) {
+	.cover-img {
+		height: 800px;
+	}
+}
+
+/* タブレット用のCSS */
+@media only screen and (min-width : 768px) and (max-width : 1200px) {
+	.cover-img {
+		height: 500px;
+	}
+}
+
+/* スマホ用のCSS */
+@media only screen and (max-width: 479px) {
+	.cover-img {
+		height: 300px;
+	}
+}
+
+.cover-mask {
+  height: 100%;
+  width: 100%;
+  display: table;
+  background: rgba(255,255,255,0.5);
+}
+
+.cover-text {
+	display: table-cell;
+	vertical-align: middle;
+  text-align: center;
+}
+
+.pagetitle{
+    padding: 0.2em 0.5em;
+    margin: 2em 0;
+    background: #d6ebff;
+    box-shadow: 0px 0px 0px 10px #d6ebff;
+    border: dashed 2px white;
+}
+.pagetitle p {
+    margin: 0; 
+    padding: 0;
+}
+
+.table table-hover {
+    margin: 0; 
+    padding: 0;
+}

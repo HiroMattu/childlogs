@@ -1,0 +1,17 @@
+<% if logged_in? %>
+
+<% else %>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 cover-img" style="background-image:url('/images/park_photo2.jpg');">
+		<div class="col-xs-12 cover-mask";">			
+			<div class="cover-text text-center">
+				<h1 style="color: #0904f9;">こどもログにようこそ！</h1>
+				<BR>
+				  <%= link_to 'ユーザー登録', signup_path, class: 'btn btn-lg btn-primary' %>
+			</div>
+		</div>
+	</div>
+</div>
+<% end %>
+
