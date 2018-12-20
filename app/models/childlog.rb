@@ -4,6 +4,7 @@ class Childlog < ApplicationRecord
     validates :content, presence: true, length: { maximum: 255 }
     validates :childwordtiming, presence: true, length: { maximum: 10 }
 
+
     belongs_to :user
     belongs_to :child
     
