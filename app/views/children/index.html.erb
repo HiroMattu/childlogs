@@ -1,5 +1,6 @@
   <div class="pagetitle">
-    <h2 align="center">こども一覧</h1>
+    <p><h2 align="center">こども一覧</h2></p>
+    <p><h3 align="center">- 登録したこどもの情報一覧だよ -</h3></p>
   </div>
 
   <% if @children.any? %>
@@ -32,5 +33,5 @@
   
   <% end %>
   
-  <%= link_to 'こども情報の新規登録', new_child_path, class: "btn btn-primary" %>
+  <%= link_to 'こども登録', new_child_path, class: "btn btn-primary" %>
   <%= link_to 'ことば一覧に移動', childlogs_path, class: "btn btn-default" %>

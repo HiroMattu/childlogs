@@ -1,5 +1,6 @@
 <div class="pagetitle">
-  <h2 align="center">こども情報の新規登録</h2>
+  <p><h2 align="center">こども登録</h2></p>
+  <p><h3 align="center">- ニックネームと誕生日を入力して登録してね -</h3></p>
 </div>
 
 <div class="row">
@@ -18,7 +19,7 @@
     <%= f.date_field :childbirthday, value: Time.now.strftime("%Y-%m-%d"),class: 'form-control' %>
   </div>
 
-  <%= f.submit 'こども情報の新規登録', class: 'btn btn-primary' %>
+  <%= f.submit 'こども登録', class: 'btn btn-primary' %>
   <%= link_to 'ことば一覧に移動', childlogs_url , class: 'btn btn-default'%> 
   <% end %>
   </div>

@@ -1,7 +1,8 @@
 <% if logged_in? %>
   
   <div class="pagetitle">
-    <p><h2 align="center">ことば一覧</h1></p>
+    <p><h2 align="center">ことば一覧</h2></p>
+    <p><h3 align="center">- STEP.1 こども情報を登録してね → STEP.2 ことばを登録してね -</h3></p>
   </div>
   
   <% if @childlogs.any? %>
@@ -35,18 +36,24 @@
     </table>
   <% end %>
   
-  <%= link_to 'ことばの新規登録', new_childlog_path, class: "btn btn-primary" %>
+  <%= link_to 'ことば登録', new_childlog_path, class: "btn btn-primary" %>
 <% else %>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-12 cover-img" style="background-image:url('/images/park_photo3.jpg');">
 		<div class="col-xs-12 cover-mask";">			
 			<div class="cover-text text-center">
-				<h1 style="color: #0904f9;">こどもログにようこそ！</h1>
+			  <div class="pagetitle">
+				<p><h1 style="color: #646766;">こどもログとは？</h1></p>
+				<p><h3 style="color: #646766;">小さなこどもの言い間違いなど、こどもの言葉をログとして登録できるサイトです</h3><p>
+				<p><h3 style="color: #646766;">例：とうもころし -> とうもろこしのこと</h3><p>
+				</div>
+				
 				<BR>
-				  <%= link_to 'ユーザー登録', signup_path, class: 'btn btn-lg btn-primary' %>
+				  <%= link_to 'ユーザー登録はこちらです', signup_path, class: 'btn btn-lg btn-info' %>
 			</div>
 		</div>
 	</div>
+
 </div>
 <% end %>
